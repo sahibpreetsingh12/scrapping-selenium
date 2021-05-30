@@ -9,4 +9,17 @@ path = '/home/sahib/selenium-tut/chromedriver'
 
 driver = webdriver.Chrome(path)
 
-driver.get('https://www.youtube.com/')
+driver.get('https://www.techwithtim.net')
+
+search_bar = driver.find_element_by_name("s")
+
+# to get title of your webpage
+
+# print(driver.title)
+
+
+# to close the current tab
+# driver.close()
+
+# to close complete browser
+# driver.quit()

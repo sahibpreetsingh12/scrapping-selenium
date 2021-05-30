@@ -5,3 +5,13 @@ Tutorial 1
 https://sites.google.com/a/chromium.org/chromedriver/downloads
 
 2. Unzip it and give it's path 
+
+3. To learn more about simple usage https://selenium-python.readthedocs.io/
+
+
+Tutorial 2
+
+REMEMBER
+1. When we search elements using selenium by default it returns us the first elemnt on the page
+2. Recommended to find any element first look if that elemnt has any ID  if not 
+any name if not then class
