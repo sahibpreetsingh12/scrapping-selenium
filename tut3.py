@@ -6,8 +6,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-import time
-
 # keys import provide us facility like Enter or Escape key so that we can interact with our 
 # search bar for this tutorial
 from selenium.webdriver.common.keys import Keys
