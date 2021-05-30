@@ -1,6 +1,4 @@
-# download chrome driver from 
-# https://sites.google.com/a/chromium.org/chromedriver/downloads
-# unzip it and give it's path
+
 
 from selenium import webdriver
 
