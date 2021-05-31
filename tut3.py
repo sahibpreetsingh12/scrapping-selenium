@@ -18,6 +18,10 @@ driver.get('https://www.techwithtim.net/')
 # to get access to serach bar of you tube
 search_bar = driver.find_element_by_id("s")
 
+# it is recommended to clear before sending keys
+search_bar.clear()
+
+
 # send our keys ( what we want to search in this case)
 search_bar.send_keys("test")
 
@@ -28,6 +32,8 @@ try:
     main = WebDriverWait(driver, 70).until(
         EC.presence_of_element_located((By.ID, "main"))
     )
+
+    # name of the tag you are looking
     articles = main.find_elements_by_tag_name("article")
     for i,art in enumerate(articles):
         head = art.find_element_by_class_name("entry-summary")
