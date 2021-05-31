@@ -21,9 +21,9 @@ search_bar = driver.find_element_by_id("search")
 search_bar.send_keys("world affairs")
 
 # see what we have searched
-res = search_bar.send_keys(Keys.RETURN)
+search_bar.send_keys(Keys.RETURN)
 
-# stop screen for 70 seconds
+# stop screen for 39 seconds
 time.sleep(30)
 
 driver.quit()

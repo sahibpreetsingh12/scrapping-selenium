@@ -17,11 +17,8 @@ driver.get('https://www.techwithtim.net/')
 
 # to get access to serach bar of you tube
 search_bar = driver.find_element_by_id("s")
-
 # it is recommended to clear before sending keys
 search_bar.clear()
-
-
 # send our keys ( what we want to search in this case)
 search_bar.send_keys("test")
 
