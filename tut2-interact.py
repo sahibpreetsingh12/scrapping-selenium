@@ -18,12 +18,13 @@ search_bar = driver.find_element_by_id("search")
 
 
 # send our keys ( what we want to search in this case)
-search_bar.send_keys("world affairs")
+search_bar.send_keys("Indian Test")
 
 # see what we have searched
 search_bar.send_keys(Keys.RETURN)
 
-# stop screen for 39 seconds
-time.sleep(30)
+
+# stop screen for 10 seconds
+time.sleep(10)
 
 driver.quit()

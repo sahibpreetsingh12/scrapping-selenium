@@ -1,7 +1,7 @@
 from selenium import webdriver
 
 
-import time
+# import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -34,6 +34,7 @@ try:
     )
     main.click()
 
+    # as we have moved 3 pages forward
     for i in range(3):
       # to get back pages from cache memory we acquired
         driver.back()
