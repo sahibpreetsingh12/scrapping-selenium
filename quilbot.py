@@ -30,7 +30,7 @@ option.add_experimental_option("prefs", {
 
 # read original unique questions 
 file_original = pd.read_csv('/home/sahib/New-question.csv')
-sentences = list(file_original['question'].values[:2])
+sentences = list(file_original['question'].values)
 
 workbook = xlsxwriter.Workbook('/home/sahib/nlu-file.xlsx')
 
@@ -50,8 +50,6 @@ driver = webdriver.Chrome(path, options= option)
 driver.get('https://quillbot.com/')
 
 
-# sentences = ["how many langugaes present in IDP","In india we have 29 states","whos going IDP do they have indicators"]
-
 # list containing all lists of variations
 scores = []
 
@@ -70,13 +68,9 @@ for k,sent in enumerate(sentences):
 	# send our keys ( what we want to search in this case)
 	search_bar.send_keys(sent)
 	
-
 	# see what we have typed
 	search_bar.send_keys(Keys.RETURN)
 	time.sleep(3)
-
-
-	# rephrased_list = []
 
 
 	if k==0:
@@ -93,7 +87,7 @@ for k,sent in enumerate(sentences):
 	# clicking on the button first time
 	button.click()
 
-	
+
 	# wait for 8 seconds
 	time.sleep(8)
 
@@ -102,19 +96,17 @@ for k,sent in enumerate(sentences):
 
 	first_occ_text = rephrase.text
 
-	if first_occ_text != rephrase.text:
-		print(f"storing first mapping of sentence  {k}")
+	# if first_occ_text != rephrase.text:
+	print(f"storing first mapping of sentence  {k}")
 
-	  # check if rephrased sentence is same as original sentence
-
-		scores.append([first_occ_text,rephrase.text])
-		for_each_sent.append(first_occ_text)
+	for_each_sent.append(first_occ_text)
 
 	time.sleep(8)
 
 	# now after genrating paraphrase for first time for a question 
 	# we will now make 2 retrievls of it
-	for i in range(5):
+	for i in range(10):
+
 
 		try:
 
@@ -127,27 +119,13 @@ for k,sent in enumerate(sentences):
 			# nth rephrased sentences
 			n_rephrased_sent = rephrase.text
 
-			 # check if rephrased sentence is same as original sentence	 and n_rephrased_sent is not already present
-			if (first_occ_text != n_rephrased_sent) and (n_rephrased_sent not in for_each_sent) : 
-
-				scores.append([first_occ_text,rephrase.text])
+			for_each_sent.append(n_rephrased_sent)
 
 
 		except :
-			# driver.switch_to.window(handles[0])# first window
-
-			# cancel_way = driver.find_element_by_class_name('MuiDialog-container MuiDialog-scrollPaper')
-			# # MuiPaper-root MuiDialog-paper jss73 MuiDialog-paperScrollPaper MuiDialog-paperWidthMd MuiPaper-rounded
-
-			# cancel_way.click()
-
-			# print("clicked outside")
 
 			driver.refresh()
-			
-
 			print(f"when error occured for sentence {k}")
-
 			k=0
 			# to get access to input box of quilbot
 			search_bar = driver.find_element_by_id("inputText")
@@ -174,35 +152,13 @@ for k,sent in enumerate(sentences):
 			time.sleep(8)
 
 			#first rephrased text on right side of quilbot
-			rephrase = driver.find_element_by_id('editable-content-within-article')
-			first_occ_text = rephrase.text
+			rephrased = driver.find_element_by_id('editable-content-within-article')
+			text_after_refresh = rephrased.text
 
-			if first_occ_text != rephrase.text:  # check if rephrased sentence is same as original sentence
-				scores.append([first_occ_text,rephrase.text])
+			for_each_sent.append(text_after_refresh)
 
-
-
-			# rephrase_button = driver.find_element_by_class_name('jss209')
-			# button.click()
-			# time.sleep(8)
-			# rephrase = driver.find_element_by_id('editable-content-within-article')
-
-			# if first_occ_text != rephrase.text:  # check if rephrased sentence is same as original sentence
-			# 	scores.append([first_occ_text,rephrase.text])
-
-
-			# cancel = driver.find_element_by_class_name('MuiIconButton-label')
-			# cancel.click()
-		# finally:
-		# 	handles = driver.window_handles
-		# 	size = len(handles)
-
-		# 	print(f"FInally handles {handles} and size is now {size} ")
-
-			
-
-
-print(scores)
+	for sent_iter in list(set(for_each_sent)):
+		scores.append([sent,sent_iter])
 
 
 # Start from the first cell. Rows and
