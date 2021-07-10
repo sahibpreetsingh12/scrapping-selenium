@@ -30,12 +30,12 @@ option.add_experimental_option("prefs", {
 
 # read original unique questions 
 file_original = pd.read_csv('/home/sahib/b1-batch .csv')
-sentences = list(file_original['question-new'].values[:5])
+sentences = list(file_original['question-new'].values[5:])
 
 
 
 # workbook = xlsxwriter.Workbook('/home/sahib/new-nlu-file-2.xlsx')
-workbook = xlsxwriter.Workbook('/home/sahib/b1-batch.xlsx')
+workbook = xlsxwriter.Workbook('/home/sahib/b1-batch-2.xlsx')
 
 # By default worksheet names in the spreadsheet will be 
 # Sheet1, Sheet2 etc., but we can also specify a name.
