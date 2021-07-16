@@ -19,3 +19,30 @@ console.log: WebExtensions: reset-default-search: No addons in our list are inst
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1626097860824	geckodriver	INFO	Listening on 127.0.0.1:35259
+1626097861828	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile8E2nS2"
+1626097862892	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile8E2nS2/search.json.mozlz4", (void 0)))
+1626097864714	Marionette	INFO	Listening on port 46709
+1626097864756	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+[GFX1-]: GFX: RenderThread detected a device reset in PostUpdate
+Unflushed glGetGraphicsResetStatus: 0x92bb
+1626154748356	Marionette	INFO	Stopped listening on port 46709
+1626409174631	geckodriver	INFO	Listening on 127.0.0.1:34429
+1626409175632	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile3PyhUa"
+1626409176574	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile3PyhUa/search.json.mozlz4", (void 0)))
+1626409178615	Marionette	INFO	Listening on port 44395
+1626409178687	Marionette	WARN	TLS certificate errors will be ignored for this session
+1626409182933	Marionette	INFO	Stopped listening on port 44395
+1626409667593	geckodriver	INFO	Listening on 127.0.0.1:56787
+1626409667598	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilehAO4X7"
+1626409668150	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilehAO4X7/search.json.mozlz4", (void 0)))
+1626409670049	Marionette	INFO	Listening on port 45675
+1626409670134	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
